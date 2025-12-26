@@ -3,7 +3,8 @@ const mongoose = require("mongoose");
 
 const app = express();
 app.use(express.json());
-
+const authRoutes = require("./routes/auth");
+app.use("/api/auth", authRoutes);
 // 🔗 الاتصال بقاعدة البيانات
 mongoose
   .connect("PUT_YOUR_LINK_HERE", {
